@@ -1,0 +1,82 @@
+from IPython.display import display, HTML
+
+# Simulating the archive landing page interface in HTML and CSS
+html_code = """
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Genesis Archive Terminal</title>
+    <style>
+        body {
+            background-color: #0b0f12;
+            color: #00ffcc;
+            font-family: 'Courier New', monospace;
+            padding: 2em;
+            line-height: 1.5;
+        }
+        .terminal {
+            border: 1px solid #00ffcc;
+            padding: 20px;
+            background-color: #111417;
+            box-shadow: 0 0 15px #00ffcc55;
+        }
+        .glitch {
+            color: #ff0066;
+            text-shadow: 1px 0 #0ff, -1px 0 #f0f;
+            animation: flicker 2s infinite alternate;
+        }
+        @keyframes flicker {
+            0% { opacity: 1; }
+            50% { opacity: 0.6; }
+            100% { opacity: 1; }
+        }
+        .tape-entry {
+            border-bottom: 1px dashed #00ffcc;
+            margin-bottom: 1em;
+            padding-bottom: 1em;
+        }
+        .note {
+            color: #ffcc00;
+        }
+        .hint {
+            color: #999;
+            font-style: italic;
+        }
+    </style>
+</head>
+<body>
+    <div class="terminal">
+        <h1>GENESIS ARCHIVE TERMINAL</h1>
+        <p>Current Year: <span class="glitch">2137</span></p>
+        <p>Welcome, External User.<br>
+        This archive was last accessed <strong>92 years ago</strong>. Proceed with caution—records are incomplete and unverified.</p>
+
+        <div class="tape-entry">
+            <h3>Tape #0174</h3>
+            <p>Date Recovered: ????</p>
+            <p>File Integrity: 63%</p>
+            <p>Status: <span class="note">Playback Possible</span></p>
+            <button>[Play]</button>
+            <button>[Transcript]</button>
+            <button>[Report Anomaly]</button>
+        </div>
+
+        <div class="tape-entry">
+            <h3>Tape #-1 <span class="glitch">[Encrypted]</span></h3>
+            <p>Status: ACCESS DENIED</p>
+            <p class="hint">Hint: “Null’s origin, buried in binary.”</p>
+        </div>
+
+        <div class="tape-entry">
+            <h3>404: Corrupted Tape</h3>
+            <p>This file has collapsed into digital rot. Retrieval attempt failed.</p>
+            <p class="glitch">“That one’s not for you… yet.”</p>
+        </div>
+    </div>
+</body>
+</html>
+"""
+
+# Display the HTML page inline
+display(HTML(html_code))
